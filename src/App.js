@@ -1,98 +1,37 @@
+import React, { useState } from 'react';
 
-//import logo from './UserTable';
-import table from './components/table';
-import React, { Component } from 'react';
+import Form from './Component/forme/forme';
+import Tableau from './Component/tableau/tableau';
+import './App.css';
+import './Component/forme/forme.css'
+import './Component/tableau/tableau.css'
 
+const App = () => {
+    const usersData = []
+  
+    const [ users, setUsers ] = useState(usersData)
 
-
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-         
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
-
-export default table;
-
-class TodoApp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { items: [], text: '' };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  render() {
-    return (
-      <div>
-        <h3>TODO</h3>
-        <TodoList items={this.state.items} />
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="new-todo">
-            What needs to be done?
-          </label>
-          <input
-            id="new-todo"
-            onChange={this.handleChange}
-            value={this.state.text}
-          />
-          <button>
-            Add #{this.state.items.length + 1}
-          </button>
-        </form>
-      </div>
-    );
-  }
-
-  handleChange(e) {
-    this.setState({ text: e.target.value });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    if (!this.state.text.length) {
-      return;
+    const ajouter = user => {
+      user.id = users.length 
+      setUsers([ ...users, user ])
     }
-    const newItem = {
-      text: this.state.text,
-      id: Date.now()
-    };
-    this.setState(state => ({
-      items: state.items.concat(newItem),
-      text: ''
-    }));
-  }
-}
 
-class TodoList extends React.Component {
-  render() {
+    const deleteUser = id => {
+        setUsers(users.filter(user => user.id !== id))
+    }
+
     return (
-      <ul>
-        {this.props.items.map(item => (
-          <li key={item.id}>{item.text}</li>
-        ))}
-      </ul>
-    );
-  }
-}
+      <div className="container-fluid">
+      <div className="flex-row">
+        <div className="flex-large">
+          <Form ajouter={ajouter} />
+        </div>
+        <div className="flex-large">
+          <Tableau users={users} deleteUser={deleteUser}/>
+        </div>
+      </div>
+    </div>
+    )
+  };
 
- // App.render(
- // <TodoApp />,
-  document.getElementById('table')
-
+export default App;

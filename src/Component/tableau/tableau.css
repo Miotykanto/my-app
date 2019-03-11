@@ -1,0 +1,38 @@
+table{
+    margin-top: 10px;
+
+    margin-top:10px;
+    border: 1px solid black;
+}
+#taB{
+    background-color: rgb(247, 222, 152); 
+}
+
+.act{
+    width: 70px;
+
+}
+th{
+    width: 280px;
+    border: 1px solid black;
+}
+td{
+    background-color: white !important;
+    border: 1px solid black;
+}
+
+#suppr{
+    margin-bottom: 2px;
+    padding-top: 1px !important;
+    height: 20px;
+    font-size: 10px;
+    font-weight: bolder;
+    margin-left: 10px;
+    background-color: aqua;
+}
+
+#list{
+    background-color:rgb(92, 197, 216); 
+}
+
+
