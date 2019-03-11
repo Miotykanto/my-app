@@ -1,6 +1,6 @@
 table{
     margin-top: 10px;
-
+    background-color: rgb(123, 170, 170);
     margin-top:10px;
     border: 1px solid black;
 }
@@ -27,12 +27,15 @@ td{
     height: 20px;
     font-size: 10px;
     font-weight: bolder;
-    margin-left: 10px;
-    background-color: aqua;
+    margin-left: 4px;
+   
 }
 
 #list{
     background-color:rgb(92, 197, 216); 
+    background: rgb(197, 216, 213);
 }
 
-
+input{
+    background: red;
+}

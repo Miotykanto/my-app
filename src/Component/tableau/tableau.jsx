@@ -5,7 +5,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
 class confirm extends Component {
     submit = (a) => {
         confirmAlert({
-          title: 'attention',
+         
           message: 'Confirmer suppression',
           buttons: [
             {
