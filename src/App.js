@@ -11,8 +11,10 @@ const App = () => {
   
     const [ users, setUsers ] = useState(usersData)
 
+    const [count, setCount] = useState(0);
+
     const ajouter = user => {
-      user.id = users.length 
+      user.id = count 
       setUsers([ ...users, user ])
     }
 
@@ -24,7 +26,7 @@ const App = () => {
       <div className="container-fluid">
       <div className="flex-row">
         <div className="flex-large">
-          <Form ajouter={ajouter} />
+          <Form ajouter={ajouter} setCount={setCount} count={count}/>
         </div>
         <div className="flex-large">
           <Tableau users={users} deleteUser={deleteUser}/>

@@ -20,6 +20,7 @@ const Form = props => {
                if (!user.nom || !user.prenom) return
          
                props.ajouter(user)
+               props.setCount(props.count +1)
                setUser(initial)
             }}>
                <label>Nom</label>
